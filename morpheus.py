@@ -135,3 +135,4 @@ class MorpheusHuggingfaceSeq2seq(MorpheusSeq2Seq):
         tokenized = self.tokenizer.encode(source, max_length=self.max_input_tokens, return_tensors='pt')
         generated = self.model.generate(tokenized.to(device))
         return self.tokenizer.decode(generated[0], skip_special_tokens=True)
+    
